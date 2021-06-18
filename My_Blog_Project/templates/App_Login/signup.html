@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags %}
+
 {% block title_block %} Create New Account {% endblock %}
 
 {% block body_block %}
@@ -12,7 +14,7 @@
 {% else %}
 
 <form method="POST">
-  {{form.as_p}}
+  {{form|crispy}}
   <button type="submit" class="btn btn-success btn-sm">Create Account</button>
 
 </form>
