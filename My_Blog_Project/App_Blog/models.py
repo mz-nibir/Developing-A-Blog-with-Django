@@ -26,3 +26,9 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.comment
+
+class Like(models.Model):
+    #kon blog e like poreche ta jana jabe..
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE, related_name='liked_blog')
+    #kon user blog ti te like diyese ta jana jabe..
+    user= models.ForeignKey(User, on_delete=models.CASCADE, related_name='liker_user')
