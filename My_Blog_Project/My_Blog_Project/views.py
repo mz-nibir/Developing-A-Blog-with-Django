@@ -1,7 +1,9 @@
-from django.shortcuts import render
+# from django.shortcuts import render
 from django.http import HttpResponse
+from django.urls import reverse
+from django.shortcuts import HttpResponseRedirect
 
 # Create your views here.
 
 def Index(request):
-    return HttpResponse('i am homepage')
+     return HttpResponseRedirect(reverse('App_Blog:blog_list'))
