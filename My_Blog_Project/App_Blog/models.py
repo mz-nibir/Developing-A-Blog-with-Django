@@ -14,3 +14,15 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.blog_title
+
+class Comment(models.Model):
+    #kon blog er Comment ta jana jabe..(ek e blog er under a onk Comment thakte pare)
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE, related_name='blog_comment')
+    #kon user se Comment ti korese ta jana jabe..(ek user er onek gula Comment thakte pare)
+    user= models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_comment')
+    comment = models.TextField()
+    comment_date = models.DateTimeField(auto_now_add=True)
+
+
+    def __str__(self):
+        return self.comment
