@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title_block %} Create New Account {% endblock %}
+
+{% block body_block %}
+<h1>Create New Account </h1>
+{%if registered%}
+<div class="alert alert-success">
+  Account Created Successfully! <a href="#">Login Here</a>
+
+</div>
+{% else %}
+
+<form method="POST">
+  {{form.as_p}}
+  <button type="submit" class="btn btn-success btn-sm">Create Account</button>
+
+</form>
+<br>
+<p>Already have an account? <a href="#">Login Here</a></p>
+
+{% endif %}
+
+
+{% endblock %}

@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 def sign_up(request):
     form= UserCreationForm()
     registered= False
-    if request.methon == 'POST':
+    if request.method == 'POST':
         form= UserCreationForm(data=request.POST)
         if form.is_valid():
             form.save()
