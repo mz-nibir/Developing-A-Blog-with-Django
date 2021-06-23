@@ -6,11 +6,11 @@
 <!-- related_name diye model theke check korbo -->
 {% if user.user_profile %}
 <!-- jodi tar profile pic thake -->
-<img src="/media/{{user.user_profile.profile_pic}}" alt="">
+<img src="/media/{{user.user_profile.profile_pic}}" alt="" class="rounded-circle" width="100px">
 
 {% else %}
 <!-- na thakle eta dekhabe  -->
-<img src="/media/profile_pics/images.png" alt="user photo">
+<img src="/media/profile_pics/images.png" alt="user photo" class="rounded-circle" width="100px" >
 
 {% endif %}
 <p>Username: {{user.username}}</p>
