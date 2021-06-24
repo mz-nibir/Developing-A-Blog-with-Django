@@ -7,7 +7,10 @@
 {% if user.user_profile %}
 <!-- jodi tar profile pic thake -->
 <img src="/media/{{user.user_profile.profile_pic}}" alt="" class="rounded-circle" width="100px">
-
+<br>
+<br>
+<!-- image jodi na thake tahole img add hobe -->
+<a href="{% url 'App_Login:change_pro_pic' %}" class="btn btn-info btn-sm">Change Profile Pic</a>
 {% else %}
 <!-- na thakle eta dekhabe  -->
 <img src="/media/profile_pics/images.png" alt="user photo" class="rounded-circle" width="100px" >
