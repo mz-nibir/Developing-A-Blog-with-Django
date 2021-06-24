@@ -11,7 +11,11 @@
 {% else %}
 <!-- na thakle eta dekhabe  -->
 <img src="/media/profile_pics/images.png" alt="user photo" class="rounded-circle" width="100px" >
-
+<br>
+<br>
+<!-- image jodi na thake tahole img add hobe -->
+<a href="{% url 'App_Login:add_pro_pic' %}" class="btn btn-info btn-sm">Change Profile Pic</a>
+<br>
 {% endif %}
 <p>Username: {{user.username}}</p>
 <p>Email: {{user.email}}</p>

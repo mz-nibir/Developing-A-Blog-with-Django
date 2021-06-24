@@ -9,7 +9,8 @@ urlpatterns = [
     path('logout/', views.logout_user, name='logout'),
     path('profile/', views.profile, name='profile'),
     path('change_profile/', views.user_change, name='change_profile'),
-    path('password/', views.pass_change, name='pass_change')
+    path('password/', views.pass_change, name='pass_change'),
+    path('add-picture/', views.add_pro_pic, name='add_pro_pic')
 
 
 ]

@@ -4,7 +4,7 @@ from django.contrib.auth import login,authenticate,logout
 from django.urls import reverse
 from django.shortcuts import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
-from App_Login.forms import SignUpForm, UserProfileChange
+from App_Login.forms import SignUpForm, UserProfileChange,ProfilePic
 
 # Create your views here.
 
@@ -71,3 +71,8 @@ def pass_change(request):
             form.save()
             changed= True
     return render(request, 'App_Login/change_pass.html', context= {'form':form, 'changed':changed})
+
+@login_required
+def add_pro_pic(request):
+    form = ProfilePic()
+    return render(request, 'App_Login/pro_pic_add.html', context={'form':form})
