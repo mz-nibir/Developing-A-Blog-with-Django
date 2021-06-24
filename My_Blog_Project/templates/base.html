@@ -18,12 +18,21 @@
           <a class="nav-link" href="{% url 'index' %}">Home</a>
         </li>
         {% if user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'App_Login:logout' %}">Logout</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'App_Login:profile' %}">Your Profile</a>
-        </li>
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          @{{user.username}}
+        </a>
+        <div class="dropdown-menu">
+
+          <a class="dropdown-item" href="{% url 'App_Login:profile' %}">Your Profile</a>
+          <a class="dropdown-item" href="{% url 'App_Login:logout' %}">Logout</a>
+
+
+        </div>
+
+
+        </div>
+
         {% else %}
         <li class="nav-item">
           <a class="nav-link" href="{% url 'App_Login:signup' %}">Sign Up</a>
@@ -32,8 +41,7 @@
           <a class="nav-link" href="{% url 'App_Login:login' %}">Login</a>
         </li>
         {% endif %}
-
-     </ul>
+      </ul>
   </nav>
 
   <div class="container pt-5">
