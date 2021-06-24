@@ -75,4 +75,15 @@ def pass_change(request):
 @login_required
 def add_pro_pic(request):
     form = ProfilePic()
+    if request.method == 'POST':
+        form = ProfilePic(request.POST, request.FILES)
+        if form.is_valid():
+            # user je pic diyese ta submit hoysese but db te submit hoyni..
+            user_obj = form.save(commit=False)
+            # request.user ==> akhon je user login ase sei...
+            user_obj.user = request.user
+            user_obj.save()
+            HttpResponseRedirect(reverse('App_Login:profile'))
+
+
     return render(request, 'App_Login/pro_pic_add.html', context={'form':form})
