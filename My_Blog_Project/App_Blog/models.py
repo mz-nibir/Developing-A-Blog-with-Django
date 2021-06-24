@@ -32,3 +32,6 @@ class Like(models.Model):
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE, related_name='liked_blog')
     #kon user blog ti te like diyese ta jana jabe..
     user= models.ForeignKey(User, on_delete=models.CASCADE, related_name='liker_user')
+
+    def __str__(self):
+        return self.user + "likes" + self.blog
