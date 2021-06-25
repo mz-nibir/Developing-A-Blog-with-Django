@@ -15,6 +15,7 @@ class BlogList(ListView):
     model = Blog
     template_name = 'App_Blog/blog_list.html'
 
+
 class CreateBlog(LoginRequiredMixin, CreateView):
     model = Blog
     template_name = 'App_Blog/create_blog.html'
