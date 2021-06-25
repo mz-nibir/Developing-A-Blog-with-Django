@@ -9,8 +9,11 @@ import uuid
 
 # Create your views here.
 
-def blog_list(request):
-    return render(request, 'App_Blog/blog_list.html', context={})
+
+class BlogList(ListView):
+    context_object_name = 'blogs'
+    model = Blog
+    template_name = 'App_Blog/blog_list.html'
 
 class CreateBlog(LoginRequiredMixin, CreateView):
     model = Blog
