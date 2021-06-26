@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+<!-- filter load korar jonno.... -->
+{% load custom_filters %}
 {% block title_block %} Home {% endblock %}
 
 {% block body_block %}
@@ -12,7 +14,7 @@
 
   </div>
   <div class="col-sm-8">
-    <p>{{blog.blog_content|linebreaks}}</p>
+    <p>{{blog.blog_content|range_filter|linebreaks}}</p>
     <h6>Posted By: <a href="#">@{{blog.author}}</a></h6>
 
   </div>
