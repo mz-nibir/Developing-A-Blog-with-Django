@@ -30,3 +30,9 @@ class CreateBlog(LoginRequiredMixin, CreateView):
         blog_obj.slug = title.replace(" ", "-") + "-" + str(uuid.uuid4())
         blog_obj.save()
         return HttpResponseRedirect(reverse('index'))
+
+@login_required
+def blog_details(request, slug):
+    blog = Blog.objects.get(slug=slug)
+
+    return render(request, 'App_Blog/blog_details.html', context={'blog':blog})

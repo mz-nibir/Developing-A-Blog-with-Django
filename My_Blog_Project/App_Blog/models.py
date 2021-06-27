@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.text import slugify
 
 # Create your models here.
 class Blog(models.Model):
@@ -17,6 +18,11 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.blog_title
+
+    def save(self):
+        self.slug = slugify(self.blog_title)
+        super(Blog, self).save()
+
 
 class Comment(models.Model):
     #kon blog er Comment ta jana jabe..(ek e blog er under a onk Comment thakte pare)
