@@ -45,7 +45,7 @@ def blog_details(request, slug):
             comment = comment_form.save(commit=False)
             # commont form er  user hobe ..akhon login kora user
             comment.user = request.user
-            # kon blog er sathe connect hobe (ei blog page ai)
+            # kon blog er sathe connect thakbe (ei blog page ai)
             comment.blog = blog
             comment.save()
             # je blog page a asi sei page ei niye ashte hobe....jehetu eti argument accecpt kore tai arg pass korte hobe slug er moddhe
