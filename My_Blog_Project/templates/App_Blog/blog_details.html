@@ -13,6 +13,10 @@
     <i><h6>Publish On: {{blog.publish_date}}</h6></i>
     <i><h6>Updated On: {{blog.update_date}}</h6></i>
 
+  <!-- like and comment count.. -->
+<!-- related_name-- liked_blog, blog_comment -->
+    <h6>{{blog.liked_blog.count}} Likes | {{blog.blog_comment.count}} Comments</h6>
+
 
   </div>
   <div class="col-sm-6">
