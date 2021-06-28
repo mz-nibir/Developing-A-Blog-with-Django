@@ -87,3 +87,6 @@ def unliked(request, pk):
         # jodi like thake tahole delete kore dibe...
         already_liked.delete()
         return HttpResponseRedirect(reverse('App_Blog:blog_details', kwargs={'slug':blog.slug}))
+
+class Myblogs(LoginRequiredMixin, TemplateView):
+    template_name = 'App_Blog/my_blogs.html'
