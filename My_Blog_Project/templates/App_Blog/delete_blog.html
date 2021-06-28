@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title_block %} {{user}} {% endblock %}
+
+{% block body_block %}
+
+<h3>Are You Sure to Delete " {{blog.blog_title}} "?</h3>
+<form method="POST">
+  {% csrf_token %}
+
+  <button type="submit" name="button" class="btn btn-danger btn-sm">Confirm</button>
+
+  <a href="{% url 'App_Blog:my_blogs' %}" class="btn btn-info btn-sm">Cancel</a>
+
+</form>
+
+
+{% endblock %}

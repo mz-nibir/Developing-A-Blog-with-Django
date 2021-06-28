@@ -100,3 +100,9 @@ class UpdateBlog(LoginRequiredMixin, UpdateView):
     # obviously we have to define success url...jodi success update na hoy tahole kothay niye jabe
     def get_success_url(self, **kwargs):
         return reverse_lazy('App_Blog:blog_details', kwargs={'slug':self.object.slug})
+
+class DeleteBlog(LoginRequiredMixin, DeleteView):
+    model = Blog
+    template_name = 'App_Blog/delete_blog.html'
+
+    success_url = reverse_lazy('App_Blog:blog_list')
