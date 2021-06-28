@@ -90,3 +90,13 @@ def unliked(request, pk):
 
 class Myblogs(LoginRequiredMixin, TemplateView):
     template_name = 'App_Blog/my_blogs.html'
+
+class UpdateBlog(LoginRequiredMixin, UpdateView):
+    model = Blog
+    # je field gula update korte coi
+    fields = ('blog_title','blog_content', 'blog_image',)
+    template_name  = 'App_Blog/edit_blog.html'
+
+    # obviously we have to define success url...jodi success update na hoy tahole kothay niye jabe
+    def get_success_url(self, **kwargs):
+        return reverse_lazy('App_Blog:blog_details', kwargs={'slug':self.object.slug})
